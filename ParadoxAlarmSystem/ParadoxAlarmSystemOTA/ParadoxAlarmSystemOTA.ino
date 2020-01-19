@@ -49,7 +49,7 @@
 bool SendEventDescriptions = 1;
 
 /*
-HomeKit id 
+HomeKit id
 Characteristic.SecuritySystemCurrentState.STAY_ARM = 0;
 Characteristic.SecuritySystemCurrentState.AWAY_ARM = 1;
 Characteristic.SecuritySystemCurrentState.NIGHT_ARM = 2;
@@ -244,7 +244,10 @@ void updateArmStatus(byte event, byte sub_event){
          
          datachanged=true;
         break;
-
+      
+      case 14:
+         hassioStatus.stringArmStatus = "pending";
+      
       default : break;
     }
   }
